@@ -9,18 +9,21 @@ By utilizing these APIs, the POC can create backups of registry keys using RegSa
 
 
 ## POC GOAL 
-modify the existing registry entry in HKCU\Software\\Microsoft\\Windows\\CurrentVersion\\Run using RegSave and Regstore API to gain persistence in targeted host.
+modify the existing registry entry in ```HKCU\Software\\Microsoft\\Windows\\CurrentVersion\\Run``` using RegSave and Regstore API to gain persistence in targeted host.
 
 ## POC Use Case
-1. Adjust Token Privilege "SeBackupPrivilege" to be able to save HKCU\Software\\Microsoft\\Windows\\CurrentVersion\\Run registry hive.
+1. Adjust Token Privilege ```SeBackupPrivilege``` to be able to save ```HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run``` registry hive.
 2. saved the registry hive to "save_reg.hive"
-3. Parse registry hive structure ("save_reg.hive")  to look for registry value key data string to modify
+3. Parse registry hive structure (```save_reg.hive```)  to look for registry value key data string to modify
 4. compute the length of the registry value key data string found during parsing to generate random file name.
-5. dropped copy of itself in c:\users\public\{random_filename}.exe
-6. create a copy of "save_reg.hive" -> mod_save_reg.hive
-7. modify the current registry value key data string of  HKCU\Software\\Microsoft\\Windows\\CurrentVersion\\Run with the file path of its file copy.
-8. Adjust Token Privilege to "SeRestorePrivilege"
-9. trigger RegRestore via RegRestoreKeyW() API.
+5. dropped copy of itself in ```c:\users\public\{random_filename}.exe```
+6. create a copy of ```save_reg.hive``` -> ```mod_save_reg.hive```
+7. modify the current registry value key data string of  ```HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run``` with the file path of its file copy.
+8. Adjust Token Privilege to ```SeRestorePrivilege```
+9. trigger RegRestore via ```RegRestoreKeyW()``` API.
+
+# HOw To Build
+- clone the project and build it using Visual Studio (tested with VS 2019)
 
 ## POC Example
 
