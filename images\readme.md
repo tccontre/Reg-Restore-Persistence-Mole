@@ -1,1 +1,0 @@
-images and screenshots
