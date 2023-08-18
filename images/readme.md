@@ -1,0 +1,1 @@
+images,video and screenshot
