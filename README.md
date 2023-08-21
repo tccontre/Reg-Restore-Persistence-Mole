@@ -10,7 +10,8 @@ By utilizing these APIs, the POC can create backups of registry keys using RegSa
 
 ## POC GOAL 
 modify the existing registry entry in ```HKCU\Software\\Microsoft\\Windows\\CurrentVersion\\Run``` using RegSave and Regstore API to gain persistence in targeted host. 
-note: this poc needs admin to execute properly
+
+notes: this poc needs an admin privileges to execute properly
 
 ## POC Use Case
 1. Adjust Token Privilege ```SeBackupPrivilege``` to be able to save ```HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run``` registry hive.
