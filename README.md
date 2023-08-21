@@ -24,7 +24,7 @@ notes: this poc needs an admin privileges to execute properly
 8. Adjust Token Privilege to ```SeRestorePrivilege```
 9. trigger RegRestore via ```RegRestoreKeyW()``` API.
 
-# HOw To Build
+# HOW To Build
 - clone the project and build it using Visual Studio (tested with VS 2019)
 
 ## POC Example
