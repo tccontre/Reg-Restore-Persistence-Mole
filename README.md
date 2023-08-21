@@ -14,7 +14,7 @@ modify the existing registry entry in ```HKCU\Software\\Microsoft\\Windows\\Curr
 ## POC Use Case
 1. Adjust Token Privilege ```SeBackupPrivilege``` to be able to save ```HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run``` registry hive.
 2. saved the registry hive to "save_reg.hive"
-3. Parse registry hive structure (```save_reg.hive```)  to look for registry value key data string to modify
+3. Parse registry hive structure (```save_reg.hive```)  to look for registry value key data string to be modify
 4. compute the length of the registry value key data string found during parsing to generate random file name.
 5. dropped copy of itself in ```c:\users\public\{random_filename}.exe```
 6. create a copy of ```save_reg.hive``` -> ```mod_save_reg.hive```
